@@ -21,22 +21,24 @@ def diceSummation(totalDice, targetDice, prob):
         probSum += choose(totalDice, i) * pow(prob, i) * pow((1-prob), (totalDice - i))
     return probSum
 
-conMod = int(input("What is your CON modifier?: "))
 
-for j in range(1,7): #Dice numbers
-    outputString = ""
-    outputString += str(j)+" Checks: "
-    i = 5
-    while(i <= 20): #DC
+# -----------------------------------------------------------
+# conMod = int(input("What is your CON modifier?: "))
 
-        #Difficulty Math
-        difficulty = 1 - (((i-conMod)-1)/20)
+# for j in range(1,7): #Dice numbers
+#     outputString = ""
+#     outputString += str(j)+" Checks: "
+#     i = 5
+#     while(i <= 20): #DC
 
-        outputString += "   "+str('{:.5f}'.format(diceSummation(j, j, difficulty)))
-        i += 5
+#         #Difficulty Math
+#         difficulty = 1 - (((i-conMod)-1)/20)
+
+#         outputString += "   "+str('{:.5f}'.format(diceSummation(j, j, difficulty)))
+#         i += 5
     
-    print(outputString)
-        
+#     print(outputString)
+# ------------------------------------------------------------
 
 
 
