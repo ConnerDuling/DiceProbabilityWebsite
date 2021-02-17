@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello():
 
     modifier = 0
-    difficultyValue = 0
+    difficultyValue = 10
     hiddenDC = difficultyValue - modifier - 1
 
     #Catches for if the values would cause a result of > 100% or < 0%
