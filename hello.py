@@ -7,8 +7,13 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def hello():
 
+    
+
     modifier = 0
-    difficultyValue = 10
+    if(request.form.get("dcInput") != None):
+        difficultyValue = int(request.form.get("dcInput"))
+    else:
+        difficultyValue = 10
     hiddenDC = difficultyValue - modifier - 1
 
     #Catches for if the values would cause a result of > 100% or < 0%
@@ -24,6 +29,7 @@ def hello():
     result *= 100
 
     if request.method == "POST":
+        
         return render_template('index.html',
                                 result=round(result, 2),
                                 difficultyValue=difficultyValue,
@@ -32,6 +38,6 @@ def hello():
     else:
         return render_template('index.html')
 
-@app.route('/howdy.html')
-def howdy():
-    return render_template('howdy.html')
+# @app.route('/howdy.html')
+# def howdy():
+#     return render_template('howdy.html')
