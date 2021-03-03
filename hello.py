@@ -12,6 +12,7 @@ def hello():
     modifier = 0
     if(request.form.get("dcInput") != None):
         difficultyValue = int(request.form.get("dcInput"))
+        modifier = int(request.form.get("modInput"))
     else:
         difficultyValue = 10
     hiddenDC = difficultyValue - modifier - 1
