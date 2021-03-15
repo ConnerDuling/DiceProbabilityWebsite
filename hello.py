@@ -23,9 +23,14 @@ def hello():
 
     #Catches for if the values would cause a result of > 100% or < 0%
     if hiddenDC > 20:
-        hiddenDC = 21
+        hiddenDC = 20
     if hiddenDC < 1:
-        hiddenDC = 1
+        hiddenDC = 0
+    #Note, if you wish to impliment the home rule of 20 always succeeds, and 1 always fails, shift the ranges to
+    #if hiddenDC > 20:
+    #     hiddenDC = 21
+    # if hiddenDC < 1:
+    #     hiddenDC = 1
 
     probOfPureWin = 1 - (1 * hiddenDC / 20)
 
