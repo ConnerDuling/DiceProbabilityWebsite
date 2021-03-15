@@ -1,4 +1,7 @@
 def factorial(n):
+    '''
+    Returns the total of 1 * ... * n
+    '''
     sum = 1
     if n == 1:
         return sum
@@ -8,7 +11,7 @@ def factorial(n):
 
 def choose(n,r):
     '''
-    Calculates the statistical Combination of the input n and r
+    Calculates the statistical Combination of the inputs n and r
     '''
     if r > n:
         return 0
@@ -16,6 +19,10 @@ def choose(n,r):
         return factorial(n) / (factorial(r) * (factorial(n - r)))
 
 def diceSummation(totalDice, targetDice, prob):
+    '''
+    Calculates the total probability of targetDice number of dice having a
+    certain outcome out of totalDice, given a specific prob of success.
+    '''
     probSum = 0
     for i in range(targetDice, (totalDice + 1)):
         probSum += choose(totalDice, i) * pow(prob, i) * pow((1-prob), (totalDice - i))
