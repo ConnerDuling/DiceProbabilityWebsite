@@ -24,14 +24,14 @@
    <div>
     
     <form action="/" method="post">
-      <p>If you make a {{ rollType }} with a DC of {{ difficultyValue }}, and a modifier of {{ modifier }}, the probability of success is {{ result }}%</p>
-      
-      <label for="rollType"></label>
+      <p>If you make a <label for="rollType"></label>
       <select name="rollType" id="rollType">
         <option rollNum="0">roll at Advantage</option>
         <option rollNum="1" selected>standard roll</option>
         <option rollNum="2">roll at Disadvantage</option>
-      </select>
+      </select> with a DC of {{ difficultyValue }}, and a modifier of {{ modifier }}, the probability of success is {{ result }}%</p>
+      
+      
       
       <label for="dcInput"></label>
       <select name="dcInput" id="dcInput">
