@@ -1,13 +1,12 @@
 from flask import Flask, render_template, request
 from calculator import diceSummation
+#from situationGenerator import outcome
 
 app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
-def hello():
-
-    
+def diceProb():
 
     modifier = 0
     rollTypeFlag = ""
@@ -57,4 +56,5 @@ def hello():
                                 rollType=rollTypeFlag)
 
     else:
+        
         return render_template('index.html')
