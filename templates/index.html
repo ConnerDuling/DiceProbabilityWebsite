@@ -29,9 +29,9 @@
         <option rollNum="0">roll at Advantage</option>
         <option rollNum="1" selected>standard roll</option>
         <option rollNum="2">roll at Disadvantage</option>
-      </select> with a DC of {{ difficultyValue }}, and a modifier of {{ modifier }}, the probability of success is {{ result }}%</p>
+      </select> 
       
-      
+      with a DC of
       
       <label for="dcInput"></label>
       <select name="dcInput" id="dcInput">
@@ -57,6 +57,8 @@
         <option difficultyValue="20">20</option>
       </select>
 
+      , and a modifier of
+
       <label for="modInput"></label>
       <select name="modInput" id="modInput">
         <option modifier="-5">-5</option>
@@ -72,7 +74,9 @@
         <option modifier="5">+5</option>
       </select>
 
-        <button type="submit" type="button">Get Result</button>
+      , the probability of success is {{ result }}% <button type="submit" type="button">Get Result</button></p>
+
+        
     </form>
     </div>
   </body>
