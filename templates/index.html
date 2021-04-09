@@ -21,13 +21,14 @@
 
     <h1>Dice Roller</h1>
 
-   <div>
+   
     
     <form action="/" method="post">
       <p>If you make a <label for="rollType"></label>
       <select name="rollType" id="rollType">
+        <option rollNum="" selected>{{ rollType }}</option>
         <option rollNum="0">roll at Advantage</option>
-        <option rollNum="1" selected>standard roll</option>
+        <option rollNum="1">standard roll</option>
         <option rollNum="2">roll at Disadvantage</option>
       </select> 
       
@@ -35,6 +36,7 @@
       
       <label for="dcInput"></label>
       <select name="dcInput" id="dcInput">
+        <option difficultyValue="0" selected>{{ difficultyValue }}</option>
         <option difficultyValue="1">1</option>
         <option difficultyValue="2">2</option>
         <option difficultyValue="3">3</option>
@@ -44,7 +46,7 @@
         <option difficultyValue="7">7</option>
         <option difficultyValue="8">8</option>
         <option difficultyValue="9">9</option>
-        <option difficultyValue="10" selected>10</option>
+        <option difficultyValue="10">10</option>
         <option difficultyValue="11">11</option>
         <option difficultyValue="12">12</option>
         <option difficultyValue="13">13</option>
@@ -61,12 +63,13 @@
 
       <label for="modInput"></label>
       <select name="modInput" id="modInput">
+        <option modifier="" selected>{{ modifier }}</option>
         <option modifier="-5">-5</option>
         <option modifier="-4">-4</option>
         <option modifier="-3">-3</option>
         <option modifier="-2">-2</option>
         <option modifier="-1">-1</option>
-        <option modifier="0" selected>0</option>
+        <option modifier="0">0</option>
         <option modifier="1">+1</option>
         <option modifier="2">+2</option>
         <option modifier="3">+3</option>
@@ -76,8 +79,10 @@
 
       , the probability of success is {{ result }}% <button type="submit" type="button">Get Result</button></p>
 
-        
+      <input type="checkbox" id="failOneRollOf1" name="failOneRollOf1" value="checked">
+      <label for="failOneRollOf1">Natural 1 always fails</label>
+    <hr>
     </form>
-    </div>
+    
   </body>
 </html>

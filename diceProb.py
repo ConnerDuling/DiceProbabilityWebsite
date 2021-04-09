@@ -20,16 +20,19 @@ def diceProb():
     #Calculates hidden REAL number that needs to be rolled >=
     hiddenDC = difficultyValue - modifier - 1
 
-    #Catches for if the values would cause a result of > 100% or < 0%
-    if hiddenDC > 20:
-        hiddenDC = 20
-    if hiddenDC < 1:
-        hiddenDC = 0
-    #Note, if you wish to impliment the home rule of 20 always succeeds, and 1 always fails, shift the ranges to
-    #if hiddenDC > 20:
-    #     hiddenDC = 21
-    # if hiddenDC < 1:
-    #     hiddenDC = 1
+
+    if request.form.get("failOneRollOf1"):
+        #If a roll of 1 should ALWAYS be a loss
+        if hiddenDC > 20:
+            hiddenDC = 19
+        if hiddenDC < 1:
+            hiddenDC = 1
+    else:
+    #If a roll of 1 should be a win, if the DC is low enough
+        if hiddenDC > 20:
+            hiddenDC = 19
+        if hiddenDC < 1:
+            hiddenDC = 0
 
     probOfPureWin = 1 - (1 * hiddenDC / 20)
 
@@ -57,4 +60,7 @@ def diceProb():
 
     else:
         
-        return render_template('index.html')
+        return render_template('index.html',
+                                difficultyValue=10,
+                                modifier=0,
+                                rollType="standard roll")
